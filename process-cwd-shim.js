@@ -2,7 +2,8 @@ let processCwdShim = () => ''
 
 const exportable =
     /* @__PURE__ */ (() => {
-        return globalThis.process.cwd = processCwdShim;
+        const cwd = 'cwd';
+        return globalThis.process[cwd] = processCwdShim;
     })();
 
 export {
